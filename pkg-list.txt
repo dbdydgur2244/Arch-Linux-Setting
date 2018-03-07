@@ -1,0 +1,9 @@
+wget
+namcap
+google-chrome
+ttf-nanum ttf-nanumgothic_coding
+jetbrains-toolbox
+imwheel
+xinput
+libc++
+discord
