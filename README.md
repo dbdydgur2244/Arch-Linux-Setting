@@ -1,5 +1,8 @@
 # Arch Linux(Manjaro) Setting
+## Install 과정
+https://www.youtube.com/watch?v=KAPRs_yWiek
 
+참고
 ## Local 설정
 
 언어랑 시간 설정
