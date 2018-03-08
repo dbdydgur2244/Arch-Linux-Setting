@@ -59,6 +59,14 @@ pacman -Sy yaourt
 
 ## 한글 설정
 
+> nabi 사용
+>
+> 2018.03.08 테스트해본 결과 configure이 없어서 설치 못함.
+>
+> ibus로 세팅하였음.
+
+### nabi
+
 ```bash
 git clone https://github.com/choehwanjin/nabi.git
 cd nabi
@@ -78,7 +86,7 @@ export GTK_IM_MODULE=xim
 export QT_IM_MODULE=xim
 ```
 
-### 한영키 사용하기
+#### 한영키 사용하기
 
 ```bash
 vi .xprofile
@@ -89,6 +97,21 @@ xmodmap -e 'remove mod1 = Alt_R'
 xmodmap -e 'keycode 108 = Hangul'
 xmodmap -e 'remove control = Control_R'
 xmodmap -e 'keycode 105 = Hangul_Hanja'
+```
+
+### IBus
+
+```bash
+pacman -S ibus-hangul ibus-qt
+```
+
+`.xprofile`의 마지막에 이 부분 추가
+
+```bash
+export GTK_IM_MODULE=ibus
+export XMODIFIERS=@im=ibus
+export QT_IM_MODULE=ibus
+export OOO_FORCE_DESKTOP="gnome"
 ```
 
 
@@ -118,7 +141,7 @@ https://unix.stackexchange.com/questions/90572/how-can-i-set-mouse-sensitivity-n
 ## 32비트 앱을 설치할 때 필요한 것
 
 ```bash
-# 32bit 앱이나 라이브러리 설치할 때 충돌않나기 위해서 /etc/pacman.conf에 추가
+# 32bit 앱이나 라이브러리 설치할 때 충돌 안나기 위해서 /etc/pacman.conf에 추가
 [multilib]
 Include = /etc/pacman.d/mirrorlist
 ```
@@ -126,6 +149,8 @@ Include = /etc/pacman.d/mirrorlist
 
 
 ## 필요한 것들 설치
+
+> $(pkg-list.txt)가 현재 안되는 거 같음
 
 ```bash
 yaourt -S $(pkg-list.txt)
